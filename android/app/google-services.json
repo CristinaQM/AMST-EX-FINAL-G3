@@ -30,6 +30,13 @@
             {
               "client_id": "162326246278-jjjefe9ifcs3cjn9ci5jtfh8qp36phhn.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "162326246278-5lka3p0sgsg3bcffc40mccdr73h4rbmt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sqexamen.sqExamenp"
+              }
             }
           ]
         }

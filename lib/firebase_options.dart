@@ -17,15 +17,24 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        return ios;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for ios - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,17 +52,6 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCjiGKxt_FDSBVU_qf4aZem2JZpfW6r5eY',
-    appId: '1:162326246278:web:4b628e055624c29e687207',
-    messagingSenderId: '162326246278',
-    projectId: 'amst-exfinal',
-    authDomain: 'amst-exfinal.firebaseapp.com',
-    databaseURL: 'https://amst-exfinal-default-rtdb.firebaseio.com',
-    storageBucket: 'amst-exfinal.appspot.com',
-    measurementId: 'G-N201HZH1SJ',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBQcmaUeh7-6_gaziGs-FOiOEKmNIk6Uc0',
     appId: '1:162326246278:android:b8abbf748e6c8dcf687207',
@@ -61,27 +59,5 @@ class DefaultFirebaseOptions {
     projectId: 'amst-exfinal',
     databaseURL: 'https://amst-exfinal-default-rtdb.firebaseio.com',
     storageBucket: 'amst-exfinal.appspot.com',
-  );
-
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDlLN7wCpquzbdzrAbHiPF2j78vmogdvZ4',
-    appId: '1:162326246278:ios:2db1912d264d889d687207',
-    messagingSenderId: '162326246278',
-    projectId: 'amst-exfinal',
-    databaseURL: 'https://amst-exfinal-default-rtdb.firebaseio.com',
-    storageBucket: 'amst-exfinal.appspot.com',
-    iosClientId: '162326246278-5lka3p0sgsg3bcffc40mccdr73h4rbmt.apps.googleusercontent.com',
-    iosBundleId: 'com.sqexamen.sqExamenp',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDlLN7wCpquzbdzrAbHiPF2j78vmogdvZ4',
-    appId: '1:162326246278:ios:e28bde351cf79d52687207',
-    messagingSenderId: '162326246278',
-    projectId: 'amst-exfinal',
-    databaseURL: 'https://amst-exfinal-default-rtdb.firebaseio.com',
-    storageBucket: 'amst-exfinal.appspot.com',
-    iosClientId: '162326246278-sv8dnsi2cf289712ai8e139950gf91im.apps.googleusercontent.com',
-    iosBundleId: 'com.sqexamen.sqExamenp.RunnerTests',
   );
 }
