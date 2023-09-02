@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "162326246278",
+    "firebase_url": "https://amst-exfinal-default-rtdb.firebaseio.com",
+    "project_id": "amst-exfinal",
+    "storage_bucket": "amst-exfinal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162326246278:android:b8abbf748e6c8dcf687207",
+        "android_client_info": {
+          "package_name": "com.sqexamen.sq_examenp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "162326246278-jjjefe9ifcs3cjn9ci5jtfh8qp36phhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQcmaUeh7-6_gaziGs-FOiOEKmNIk6Uc0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "162326246278-jjjefe9ifcs3cjn9ci5jtfh8qp36phhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
