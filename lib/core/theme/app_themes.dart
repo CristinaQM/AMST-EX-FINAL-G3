@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class AppThemes {
-  static final Color _lightFocusColor = Colors.black.withOpacity(0.12);
+  static final Color _lightFocusColor = Colors.white.withOpacity(0.12);
 
   static ThemeData lightThemeData = themeData(lightColorScheme, _lightFocusColor);
 
@@ -21,14 +21,14 @@ class AppThemes {
   }
 
   static const ColorScheme lightColorScheme = ColorScheme(
-    primary: Color(0xFFE46A76),
+    primary: Color(0xFF1984F2),
     primaryContainer: Color(0xFF4F5467),
-    secondary: Color(0xFFEDF1F5),
-    tertiary: Color(0xFF9672CC),
-    background: Color(0xFFEDF1F5),
-    surface: Color(0xFFF7FAFB),
+    secondary: Color(0xFF7E36E2),
+    tertiary: Color(0xFFBFA3F6),
+    background: Color(0xFF050632),
+    surface: Color(0xFFF5B70C),
     surfaceTint: Colors.black,
-    onBackground: Color(0xFFD4D8E4),
+    onBackground: Colors.white,
     error: Color(0xFFE46A76),
     onError: Colors.white,
     onPrimary: Colors.white,

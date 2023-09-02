@@ -14,29 +14,107 @@ class DataView extends GetView<DataController> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         title: const Text('Datos Sensados'),
       ),
-      body: Center(
-        child: Obx(() {
-          if (controller.loading) {
-            return const Column(
+      body: Obx(() {
+        if (controller.loading) {
+          return const Center(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox.square(
-                  dimension: 20,
+                  dimension: 50,
                   child: CircularProgressIndicator(),
                 ),
               ],
-            );
-          } else {
-            return Column(
-              children: controller.records
-                  .map<Widget>(
-                    (record) => Text(record['time']),
-                  )
-                  .toList(),
-            );
-          }
-        }),
-      ),
+            ),
+          );
+        } else {
+          return Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 10,
+              horizontal: 20,
+            ),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: controller.records.map<Widget>(
+                  (record) {
+                    String date = record['time'].split('T').first;
+                    String time = record['time'].split('T').last.split('.').first;
+                    return Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Fecha:',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    date,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 15),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Hora:',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    time,
+                                    style: const TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(width: 15),
+                              const Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Text(
+                                    'Alerta:',
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.w500,
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                  Text(
+                                    'FUEGO DETECTADO',
+                                    style: TextStyle(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Divider(
+                          color: Colors.white,
+                        ),
+                      ],
+                    );
+                  },
+                ).toList(),
+              ),
+            ),
+          );
+        }
+      }),
       floatingActionButton: const MenuButtonWidget(),
     );
   }

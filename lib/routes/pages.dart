@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:sq_examenp/app/modules/battery/controller.dart';
 import 'package:sq_examenp/app/modules/battery/view.dart';
 import 'package:sq_examenp/app/modules/data/controller.dart';
 import 'package:sq_examenp/app/modules/data/view.dart';
@@ -17,6 +18,9 @@ class AppPages {
     GetPage(
       name: Routes.battery,
       page: () => const BatteryView(),
+      binding: BindingsBuilder(() {
+        Get.put(BatteryController());
+      }),
     ),
     GetPage(
       name: Routes.data,

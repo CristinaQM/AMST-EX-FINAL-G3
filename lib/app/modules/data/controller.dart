@@ -16,7 +16,6 @@ class DataController extends GetxController {
 
     for (var MapEntry(:key, :value) in (data as Map).entries) {
       records.add({...value['uplink_message']['settings'], 'id': key});
-      print(records);
     }
 
     _loading.value = false;

@@ -39,6 +39,7 @@ dependencies:
   material_design_icons_flutter: ^7.0.7296
   get_storage: ^2.1.1
   firebase_core: ^2.15.1
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
